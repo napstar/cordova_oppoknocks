@@ -2,8 +2,10 @@
 var oppoKnoocksApp = angular.module('oppoKnoocksApp', ['ngRoute']);
 
 // Define the `PhoneListController` controller on the `phonecatApp` module
-oppoKnoocksApp.controller('CameraController', function CameraController($scope,$log,$q, CameraFactory,$routeProvider) {
-  $scope.message ="Fuck You";
+oppoKnoocksApp.controller('CameraController', function CameraController($scope,$log,$q, CameraFactory) {
+  $scope.message ="Camera";
+  $scope.imgURL='';
+
   $scope.takepic = function() {
   
     CameraFactory.takePicture();
@@ -48,7 +50,7 @@ oppoKnoocksApp.factory('CameraFactory', function ($q) {
 
         var image = $('#photo');
         image.attr('src', imageURI);
-        $('#share-container').show();
+        
 
       }, function (errorMessage) {
         alert('The following error occured: ' + errorMessage)
