@@ -36,6 +36,9 @@
     },
     "cordova-plugin-advanced-http": {
       "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-plugin-mauron85-background-geolocation": {
+      "PACKAGE_NAME": "com.example.hello"
     }
   },
   "dependent_plugins": {},
@@ -605,6 +608,14 @@
       "id": "cordova-plugin-advanced-http.http-proxy",
       "pluginId": "cordova-plugin-advanced-http",
       "runs": true
+    },
+    {
+      "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/backgroundGeolocation.js",
+      "id": "cordova-plugin-mauron85-background-geolocation.backgroundGeolocation",
+      "pluginId": "cordova-plugin-mauron85-background-geolocation",
+      "clobbers": [
+        "backgroundGeolocation"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -612,6 +623,7 @@
     "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-googlemaps": "2.5.0",
     "cordova-plugin-file": "6.0.1",
-    "cordova-plugin-advanced-http": "2.0.4"
+    "cordova-plugin-advanced-http": "2.0.4",
+    "cordova-plugin-mauron85-background-geolocation": "2.3.6"
   }
 }

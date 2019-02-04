@@ -12,9 +12,11 @@ oppoKnoocksApp.controller('CameraController', function CameraController($scope,$
 }
 
 });
-oppoKnoocksApp.controller('BackGeoController', function BackGeoController($scope,$log,$q) {
+oppoKnoocksApp.controller('BackGeoController', function BackGeoController($scope,$log,$q,BackgroungGeoFactory) {
   $scope.message ="Back Geo";
-
+$scope.start=function(){
+  BackgroungGeoFactory.start();
+  }
 });
 oppoKnoocksApp.controller('GoogleMapsController', function GoogleMapsController($scope,$log,$q,GoogleMapsFactory) {
   $scope.message ="Google Maps";
@@ -117,6 +119,12 @@ oppoKnoocksApp.controller('DeviceGalleryController', function DeviceGalleryContr
   $scope.message ="DeviceGallery";
 
 });
+
+oppoKnoocksApp.controller('BackgroundGeolocationController', function DeviceGalleryController($scope,$log,$q) {
+  $scope.message ="DeviceGallery";
+  
+});
+
 oppoKnoocksApp.controller('SQLController', function SQLController($scope,$log,$q) {
   $scope.message ="SQLController";
 
@@ -171,6 +179,56 @@ oppoKnoocksApp.factory('CameraFactory', function ($q) {
 
   }
 
+});
+
+oppoKnoocksApp.factory('BackgroungGeoFactory', function ($q) {
+  var callbackFn = function(location) {
+    $http({
+        //request options to send data to server
+    });
+  backgroundGeoLocation.finish();
+},
+ // backgroundGeoLocation.init();
+ failureFn = function(error) {
+  console.log('BackgroundGeoLocation error ' + JSON.stringify(error));
+},
+
+//Enable background geolocation
+start = function () {
+    //save settings (background tracking is enabled) in local storage
+  window.localStorage.setItem('bgGPS', 1);
+
+  backgroundGeoLocation.configure(callbackFn, failureFn, {
+    desiredAccuracy: 10,
+    stationaryRadius: 20,
+    distanceFilter: 30,
+    locationService: 'ANDROID_DISTANCE_FILTER',
+    debug: false,
+    stopOnTerminate: false
+  });
+
+  backgroundGeoLocation.start();
+};
+
+return {
+  start: start,
+
+    // Initialize service and enable background geolocation by default
+  init: function () {
+    var bgGPS = window.localStorage.getItem('bgGPS');
+    if (bgGPS == 1 || bgGPS == null) {
+      start();
+    }
+  },
+
+    // Stop data tracking
+  stop: function () {
+    window.localStorage.setItem('bgGPS', 0);
+    backgroundGeoLocation.stop();
+  }
+}
+
+ 
 });
 
 

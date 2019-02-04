@@ -565,6 +565,14 @@ module.exports = [
         "id": "cordova-plugin-advanced-http.http-proxy",
         "pluginId": "cordova-plugin-advanced-http",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/backgroundGeolocation.js",
+        "id": "cordova-plugin-mauron85-background-geolocation.backgroundGeolocation",
+        "pluginId": "cordova-plugin-mauron85-background-geolocation",
+        "clobbers": [
+            "backgroundGeolocation"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -574,7 +582,8 @@ module.exports.metadata =
     "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-googlemaps": "2.5.0",
     "cordova-plugin-file": "6.0.1",
-    "cordova-plugin-advanced-http": "2.0.4"
+    "cordova-plugin-advanced-http": "2.0.4",
+    "cordova-plugin-mauron85-background-geolocation": "2.3.6"
 }
 // BOTTOM OF METADATA
 });
