@@ -573,6 +573,22 @@ module.exports = [
         "clobbers": [
             "backgroundGeolocation"
         ]
+    },
+    {
+        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+        "id": "cordova-sqlite-storage.SQLitePlugin",
+        "pluginId": "cordova-sqlite-storage",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
+    },
+    {
+        "file": "plugins/cordova-sqlite-ext/www/SQLitePlugin.js",
+        "id": "cordova-sqlite-ext.SQLitePlugin",
+        "pluginId": "cordova-sqlite-ext",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -583,7 +599,9 @@ module.exports.metadata =
     "cordova-plugin-googlemaps": "2.5.0",
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-advanced-http": "2.0.4",
-    "cordova-plugin-mauron85-background-geolocation": "2.3.6"
+    "cordova-plugin-mauron85-background-geolocation": "2.3.6",
+    "cordova-sqlite-storage": "3.0.0",
+    "cordova-sqlite-ext": "2.3.1"
 }
 // BOTTOM OF METADATA
 });

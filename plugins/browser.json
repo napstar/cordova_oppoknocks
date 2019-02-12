@@ -21,6 +21,12 @@
     },
     "cordova-plugin-mauron85-background-geolocation": {
       "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-sqlite-ext": {
+      "PACKAGE_NAME": "com.example.hello"
     }
   },
   "dependent_plugins": {
